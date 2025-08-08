@@ -8,7 +8,7 @@ Configure and test basic firewall rules to allow or block traffic.
 
 ---
 
-## 📌 Steps Performed
+## Steps Performed
 
 ### 1. Open Windows Defender Firewall
 - Press `Windows + S`, search for **Windows Defender Firewall with Advanced Security**, and open it.
@@ -36,7 +36,7 @@ Since Telnet is disabled by default:
 ---
 Wait until the installation finishes.
 ---
-4. Test the Firewall Rule
+### 4. Test the Firewall Rule
 Open Command Prompt.
 
 Run:
@@ -44,43 +44,44 @@ Run:
 telnet localhost 23
 ```
 ---
-### Expected result:
+## Expected result:
 <i>Connecting to localhost...Could not open connection to the host, on port 23: Connect failed
 This confirms the firewall blocked the port.</i>
 ---
-5. Remove the Rule
-Go back to Inbound Rules.
-
+### 5. Remove the Rule
+Go back to Inbound Rules.<br>
 Right-click Block Telnet Port 23 → Delete.
+
 ---
-##📷 Screenshots
-Before rule creation: Existing firewall rules.
 
-After rule creation: Block Telnet Port 23 visible in Inbound Rules.
-
-Testing: Telnet connection failed message.
-
+##  📷 Screenshots
+Before rule creation: Existing firewall rules.<br>
+After rule creation: Block Telnet Port 23 visible in Inbound Rules.<br>
+Testing: Telnet connection failed message.<br>
 After removal: Rule deleted and firewall restored to original state.
+
 ---
+
 ## How a Firewall Filters Traffic
-A firewall examines network traffic and applies rules to allow or block packets.
+A firewall examines network traffic and applies rules to allow or block packets.<br>
+Rules can be based on:<br>
+Port number<br>
+Protocol (TCP/UDP)<br>
+IP address<br>
+Direction (Inbound/Outbound)<br>
+Allow rules let matching packets pass through.<br>
+Block/Deny rules drop or reject packets.<br>
+Windows Defender Firewall is stateful, meaning it tracks active connections and allows response traffic automatically.<br>
 
-Rules can be based on:
-
-Port number
-Protocol (TCP/UDP)
-IP address
-Direction (Inbound/Outbound)
-Allow rules let matching packets pass through.
-Block/Deny rules drop or reject packets.
-Windows Defender Firewall is stateful, meaning it tracks active connections and allows response traffic automatically.
 ---
+
 ## Conclusion
-The firewall successfully blocked inbound Telnet traffic on port 23. This demonstrated how to:
+The firewall successfully blocked inbound Telnet traffic on port 23. This demonstrated how to:<br>
+Create a new inbound rule<br>
+Test the block using Telnet<br>
+Remove the rule to restore the firewall<br>
 
-Create a new inbound rule
-Test the block using Telnet
-Remove the rule to restore the firewall
 ---
-Author: Mumuksha Kashyap
+
+##  Author: Mumuksha Kashyap<br>
 Date: 8/8/2025
